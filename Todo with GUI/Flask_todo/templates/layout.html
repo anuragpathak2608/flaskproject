@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Flask project</title>
+    {% endif %}
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Flask ToDo Application</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/tasks">Home</a></li>
+            <li><a href="/users">Users</a></li>
+            <li><a href="/tasks/deleted">Deleted Tasks</a></li>
+            <li><a href="/tasks/completed">Completed Tasks</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <button class="btn btn-danger mr-5 navbar-btn">Create Task</button>
+            </li>
+            <li>
+                <button class="btn btn-danger mr-1 navbar-btn">Create User</button>
+            </li>
+
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table id="mytable" class="table table-bordred table-striped">
+                    {% block content %}{% endblock %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

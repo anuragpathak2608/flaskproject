@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container">
+    <h3>Add User</h3>
+    <hr>
+    <form action="" method="POST" class="form" role="form">
+        {{ form.csrf_token() }}
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    {{ wtf.form_field(form.username, class='form-control', placeholder='username', ) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="form-group">
+                    {{ wtf.form_field(form.email, class='form-control', placeholder='email') }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <hr>
+    <p>Open one account - All humans working for you.</p>
+    <p><a href="#">Sign in instead</a></p>
+</div>
+{% endblock %}
